@@ -18,10 +18,12 @@ public class ControllerClass {
         return "Hello World";
     }
 
-    @GetMapping("/api/{paramWord}")
-    public String returnAnyString(@RequestParam(required = false) String paramWord) {
+    @GetMapping("/api/{name}")
+    @ResponseBody
+    //public String returnAnyString(@RequestParam String name) {    //param  ?name=lalala
+    public String returnAnyString(@PathVariable("name") String name) {
         System.out.println("in the anyString fn");
-        return  paramWord.toUpperCase();
+        return  name.toUpperCase();
     }
     //factory pattern then adapter
 }
