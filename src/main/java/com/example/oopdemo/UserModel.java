@@ -2,7 +2,6 @@ package com.example.oopdemo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NonNull;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
