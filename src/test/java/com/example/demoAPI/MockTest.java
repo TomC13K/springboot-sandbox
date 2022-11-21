@@ -1,4 +1,4 @@
-package com.example.oopdemo;
+package com.example.demoAPI;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
