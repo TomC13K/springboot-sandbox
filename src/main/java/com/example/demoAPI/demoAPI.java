@@ -1,13 +1,13 @@
-package com.example.oopdemo;
+package com.example.demoAPI;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OopDemoApplication {
+public class demoAPI {
 
     public static void main(String[] args) {
-        SpringApplication.run(OopDemoApplication.class, args);
+        SpringApplication.run(demoAPI.class, args);
     }
 
 }

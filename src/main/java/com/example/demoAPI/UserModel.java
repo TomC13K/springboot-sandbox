@@ -1,4 +1,4 @@
-package com.example.oopdemo;
+package com.example.demoAPI;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

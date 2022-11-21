@@ -1,4 +1,4 @@
-package com.example.oopdemo;
+package com.example.demoAPI;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,15 +19,14 @@ public class UserController {
         return "Hello World";
     }
 
-    // when using the PATH name
-    @GetMapping("/{name}")
+    @GetMapping("/{name}")   // api/<something>
     @ResponseBody
-    public Object returnAnyString(@PathVariable("name") String name) {
-        return service.returnAsUpperCase(name);
+    public ResponseEntity<Object> returnAnyString(@PathVariable("name") String name) {
+        return new ResponseEntity<>(service.returnAsUpperCase(name),HttpStatus.OK);
     }
 
-    // when using PARAM id  after  "/api/foo?id=xxxxx"
-    @GetMapping("/foo")
+    // when using PARAM id  after
+    @GetMapping("/foo")      // api/foo?id=xxxxx"
     @ResponseBody
     public String getFoos(@RequestParam String id) {
         return "ID: " + id;
