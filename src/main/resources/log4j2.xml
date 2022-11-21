@@ -3,14 +3,18 @@
 
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-        <!--    pattern of the output string  %d- datetime %t - thread %c - log level %msg- message  %n - new line           -->
-            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-70c - %msg%n"/>
+        <!--    pattern of the output string  %d- datetime %t - thread %level - log level %msg- message  %n - new line    c{1.} - abbreviate logger name          -->
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
         </Console>
+        <File name="File" target="logs.log">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
+        </File>
     </Appenders>
 
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console" />
+            <AppenderRef ref="File" />
         </Root>
     </Loggers>
 
