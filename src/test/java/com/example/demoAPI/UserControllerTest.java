@@ -1,5 +1,6 @@
 package com.example.demoAPI;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -23,7 +24,8 @@ public class UserControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void defaultUrlReturnsHelloWorld() throws Exception {
+    @DisplayName("default API root path returns \"Hello World\"")
+    public void rootAPIUrl_ReturnsHelloWorld() throws Exception {
         this.mockMvc.perform(get("/api/"))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -31,7 +33,8 @@ public class UserControllerTest {
     }
 
     @Test
-    public void returnsCapitalizedUrlPathName() throws Exception {
+    @DisplayName("URL path name returns this name capitalized")
+    public void returnAsUpperCase_ReturnsCapitalizedUrlPathName() throws Exception {
         this.mockMvc.perform(get("/api/olala"))
                 .andDo(print())
                 .andExpect(status().isOk())
