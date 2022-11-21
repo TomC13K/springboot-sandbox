@@ -1,22 +1,29 @@
 
+# INFO
+- server port `8081`
+- User controller `localhost:8081/api/`
+- swagger `http://localhost:8081/swagger-ui/index.html`
+
+
 # Tasks
 
-- [ ] Api path /**name** prints the uppercase path name on screen  
+- [x] Api path /**name** prints the uppercase path name on screen  
    - eg. **/onetwo** prints ONETWO
-- [ ] add tests
-   - services tests (test uppercaase logic)
-   - controllers tests HTTP status code
-   - test url full path
-- [ ] POST endpoint, http receives body of an object
+- [x] add tests
+   - [x] services tests (test uppercaase logic)
+   - [x] controllers tests HTTP status code
+   - [ ] test url full path
+   - [ ] mocks
+- [x] POST endpoint, http receives body of an object
 
 
 
 # TODO
 
-- [ ] add swagger
+- [x] add swagger
 - [ ] logging
 - [ ] exceptions
-- [ ] HTTP status codes
+- [x] HTTP status codes
 
 
 controller->service->orm to create DB  (use my MySQL)
