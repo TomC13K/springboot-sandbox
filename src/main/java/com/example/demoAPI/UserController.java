@@ -40,9 +40,14 @@ public class UserController {
 
     @PostMapping("/userName")
     public ResponseEntity<UserModel> postBody(@Valid @RequestBody UserModel user) {
-
         service.createUser(user);
         return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @GetMapping("/getUsers")   // api/<something>
+    @ResponseBody
+    public ResponseEntity<Object> getAllUsers() {
+        return new ResponseEntity<>(service.getAllUsers(),HttpStatus.OK);
     }
 
 }
