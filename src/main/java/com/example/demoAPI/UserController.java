@@ -1,5 +1,7 @@
 package com.example.demoAPI;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,11 +13,16 @@ import javax.validation.Valid;
 @RequestMapping("/api")
 public class UserController {
 
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     private UserService service;
 
     @GetMapping("/")
     public String returnString() {
+        logger.info("Root URL");
+        logger.debug("debug message");
+        logger.error("no error for error message");
         return "Hello World";
     }
 
