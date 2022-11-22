@@ -22,6 +22,7 @@ public class UserController {
     public String returnString() {
         logger.info("Root URL");
         logger.debug("debug message");
+        logger.warn("warning message");
         logger.error("no error for error message");
         return "Hello World";
     }
@@ -32,7 +33,6 @@ public class UserController {
         return new ResponseEntity<>(service.returnAsUpperCase(name),HttpStatus.OK);
     }
 
-    // when using PARAM id  after
     @GetMapping("/foo")      // api/foo?id=xxxxx"
     @ResponseBody
     public String getFoos(@RequestParam String id) {
@@ -41,7 +41,20 @@ public class UserController {
 
     @PostMapping("/userName")
     public ResponseEntity<UserModel> postBody(@Valid @RequestBody UserModel user) {
-            return new ResponseEntity<>(user, HttpStatus.OK);
-        }
+        service.createUser(user);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+    @GetMapping("/getUsers")   // api/<something>
+    @ResponseBody
+    public ResponseEntity<Object> getAllUsers() {
+        return new ResponseEntity<>(service.getAllUsers(),HttpStatus.OK);
+    }
+
+    @GetMapping("/hi/{id}")   // api/<something>
+    @ResponseBody
+    public ResponseEntity<Object> getUserByID(@PathVariable("id") String id) {
+        return new ResponseEntity<>(service.getUserByID(Integer.parseInt(id)),HttpStatus.OK);
+    }
 
 }

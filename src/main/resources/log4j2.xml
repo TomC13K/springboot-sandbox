@@ -4,21 +4,21 @@
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
         <!--    pattern of the output string  %d- datetime %t - thread %level - log level %msg- message  %n - new line    c{1.} - abbreviate logger name          -->
-            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
+            <PatternLayout disableAnsi="false" pattern="%highlight{%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n}{FATAL=white, ERROR=red, WARN=yellow, INFO=grey, DEBUG=purple, TRACE=blue}"/>
         </Console>
-        <File name="ErrorFile" target="./Logs-error.log">
-            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
-        </File>
-        <File name="InfoFile" target="./Logs-info.log">
-            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
-        </File>
+<!--        <File name="ErrorFile" target="Logs-error.log">-->
+<!--            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>-->
+<!--        </File>-->
+<!--        <File name="InfoFile" target="Logs-info.log">-->
+<!--            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>-->
+<!--        </File>-->
     </Appenders>
 
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console" />
-            <AppenderRef ref="InfoFile" />
-            <AppenderRef ref="ErrorFile" level="error"/>
+<!--            <AppenderRef ref="InfoFile" />-->
+<!--            <AppenderRef ref="ErrorFile" level="error"/>-->
         </Root>
     </Loggers>
 
