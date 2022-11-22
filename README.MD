@@ -12,26 +12,23 @@
 - [x] add tests
    - [x] services tests (test uppercaase logic)
    - [x] controllers tests HTTP status code
-   - [ ] test url full path
-   - [ ] mocks
 - [x] POST endpoint, http receives body of an object
-
-
-
-# TODO
-
-- [x] add swagger
-- [x] logging (except file output, doesnt create file in any working or Linux dir)
-- [ ] exceptions
 - [x] HTTP status codes
+- [x] add swagger
 - [x] controller->service->orm to create DB  (use my MySQL)
 - [x] store the user model.. in DB  do all CRUD ops
 - [x] endpoint Hi - brings full object but full name and you are x years old
 - [x] Hi {firstname}, {surname}, you are {age} year old
+- [x] Maven CI pipeline
 
 
-# Notes
-factory pattern then adapter
+# TODO
+- [ ] test url full path
+- [ ] mocks
+- [ ] logging (except `file output`, doesnt create file in any working or Linux dir)
+- [ ] exceptions
+
+
 ### ORM
 not an ORM
 JDBI is better look into - control over SQL but dont need create mappers (typeOrm)
@@ -40,8 +37,6 @@ https://mybatis.org/mybatis-3/
 terrible
 https://hibernate.org/orm/
 
-path to show string on screeen
-hi/{id}  -so we have unique
 
 ### logging
 set logging xml file to keep error logs
