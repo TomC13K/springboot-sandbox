@@ -22,6 +22,7 @@ public class UserController {
     public String returnString() {
         logger.info("Root URL");
         logger.debug("debug message");
+        logger.warn("warning message");
         logger.error("no error for error message");
         return "Hello World";
     }
