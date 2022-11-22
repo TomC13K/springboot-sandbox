@@ -21,14 +21,14 @@
 # TODO
 
 - [x] add swagger
-- [ ] logging
+- [x] logging (except file output, doesnt create file in any working or Linux dir)
 - [ ] exceptions
 - [x] HTTP status codes
 
 
 controller->service->orm to create DB  (use my MySQL)
 store the user model.. in DB  do all CRUD ops
-endpoint Hi - brings all object but full name and you are x years old
+endpoint Hi - brings full object but full name and you are x years old
 Hi {firstname}, {surname}, you are {age} year old
 
 
