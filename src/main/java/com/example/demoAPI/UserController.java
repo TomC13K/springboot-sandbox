@@ -51,4 +51,10 @@ public class UserController {
         return new ResponseEntity<>(service.getAllUsers(),HttpStatus.OK);
     }
 
+    @GetMapping("/hi/{id}")   // api/<something>
+    @ResponseBody
+    public ResponseEntity<Object> getUserByID(@PathVariable("id") String id) {
+        return new ResponseEntity<>(service.getUserByID(Integer.parseInt(id)),HttpStatus.OK);
+    }
+
 }

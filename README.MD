@@ -24,12 +24,10 @@
 - [x] logging (except file output, doesnt create file in any working or Linux dir)
 - [ ] exceptions
 - [x] HTTP status codes
-
-
-controller->service->orm to create DB  (use my MySQL)
-store the user model.. in DB  do all CRUD ops
-endpoint Hi - brings full object but full name and you are x years old
-Hi {firstname}, {surname}, you are {age} year old
+- [x] controller->service->orm to create DB  (use my MySQL)
+- [x] store the user model.. in DB  do all CRUD ops
+- [x] endpoint Hi - brings full object but full name and you are x years old
+- [x] Hi {firstname}, {surname}, you are {age} year old
 
 
 # Notes

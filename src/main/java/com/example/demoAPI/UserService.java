@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -38,11 +39,12 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public UserModel returnUser(UserModel user) {
-        System.out.println("in the anyString fn--"); //logger
-        return user;
+    public String getUserByID(Integer id) {
+        Optional<UserEntity> studentResponse =  userRepository.findById(id);
+        UserEntity user = studentResponse.get();
+        String output = String.format("Hi %s, %s, you are %s year old",user.name,user.surname,user.age);
+        return output;
     }
-
 
 }
 
