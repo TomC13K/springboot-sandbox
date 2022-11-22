@@ -25,5 +25,5 @@ public class UserModel {
     @Max(value = 100, message = "Age should not be more than 100")
     public Integer age;
 
-    public int age2;
+    public Integer age2;
 }

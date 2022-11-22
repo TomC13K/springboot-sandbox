@@ -17,6 +17,8 @@ public class UserController {
 
     @Autowired
     private UserService service;
+    @Autowired
+    private UserRepository userRepository;;
 
     @GetMapping("/")
     public String returnString() {
@@ -41,7 +43,19 @@ public class UserController {
 
     @PostMapping("/userName")
     public ResponseEntity<UserModel> postBody(@Valid @RequestBody UserModel user) {
-            return new ResponseEntity<>(user, HttpStatus.OK);
+
+        UserEntity n = new UserEntity();
+        n.setName(user.name);
+        n.setSurname(user.surname);
+        n.setAge(user.age);
+        n.setAge2(user.age2);
+
+        try {
+            userRepository.save(n);
+        }catch (Exception er) {
+            logger.error("Couldnt write user to a DB \n" + er);
         }
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
 
 }
