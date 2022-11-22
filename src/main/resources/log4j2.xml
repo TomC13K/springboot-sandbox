@@ -6,7 +6,10 @@
         <!--    pattern of the output string  %d- datetime %t - thread %level - log level %msg- message  %n - new line    c{1.} - abbreviate logger name          -->
             <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
         </Console>
-        <File name="File" target="logs.log">
+        <File name="ErrorFile" target="./Logs-error.log">
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
+        </File>
+        <File name="InfoFile" target="./Logs-info.log">
             <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
         </File>
     </Appenders>
@@ -14,8 +17,16 @@
     <Loggers>
         <Root level="info">
             <AppenderRef ref="Console" />
-            <AppenderRef ref="File" />
+            <AppenderRef ref="InfoFile" />
+            <AppenderRef ref="ErrorFile" level="error"/>
         </Root>
     </Loggers>
+
+<!--    <Properties>-->
+<!--        &lt;!&ndash;LOG DIRECTORY&ndash;&gt;-->
+<!--&lt;!&ndash;        <Property name="logPath">/var/log/demoApi</Property>&ndash;&gt;-->
+<!--&lt;!&ndash;        <Property name="logPath">/logs/</Property>&ndash;&gt;-->
+
+<!--    </Properties>-->
 
 </Configuration>
