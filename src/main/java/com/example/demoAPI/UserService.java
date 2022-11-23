@@ -21,11 +21,12 @@ public class UserService {
     }
 
     public String createUser(UserModel user) {
+
         UserEntity n = new UserEntity();
-        n.setName(user.name);
-        n.setSurname(user.surname);
-        n.setAge(user.age);
-        n.setAge2(user.age2);
+        n.name = user.name;
+        n.surname = user.surname;
+        n.age = user.age;
+        n.age2 = user.age2;
 
         try {
             userRepository.save(n);
